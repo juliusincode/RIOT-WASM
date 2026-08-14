@@ -1,0 +1,122 @@
+Building application "wasm_ble_loader" for "esp32c6-devkit" with CPU "esp32".
+
+test -f /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded && (test `cat /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded` = 8af155076c6c62d9766ede640cf3f29fa73a4b53 || rm /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded);true
+"make" -C /home/claude/riot-src/pkg/esp32_sdk/ 
+"make" -C /home/claude/riot-src/pkg/esp32_sdk_lib_bt_esp32c6/ 
+"make" -C /home/claude/riot-src/pkg/esp32_sdk_lib_coexist/ 
+"make" -C /home/claude/riot-src/pkg/esp32_sdk_lib_phy/ 
+"make" -C /home/claude/riot-src/pkg/mbedtls/ 
+"make" -C /home/claude/riot-src/build/pkg/mbedtls/library/ \
+		  -f /home/claude/riot-src/Makefile.base MODULE=mbedtls
+"make" -C /home/claude/riot-src/pkg/nimble/ 
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/host/src/ -f /home/claude/riot-src/pkg/nimble/nimble.host.mk
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/host/store/ram/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_host_store_ram
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/host/util/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_host_util
+"make" -C /home/claude/riot-src/build/pkg/nimble/porting/npl/riot/src/ -f /home/claude/riot-src/pkg/nimble/nimble.npl.mk MODULE=nimble_npl_riot
+"make" -C /home/claude/riot-src/build/pkg/nimble/porting/nimble/src/ -f /home/claude/riot-src/pkg/nimble/nimble.porting.mk MODULE=nimble_porting_nimble
+"make" -C /home/claude/riot-src/pkg/nimble/contrib/
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gap/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_svc_gap
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gatt/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_svc_gatt
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/transport/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_transport
+"make" -C /home/claude/riot-src/build/pkg/nimble/nimble/transport/common/hci_h4/src/ -f /home/claude/riot-src/Makefile.base MODULE=nimble_transport_hci_h4
+"make" -C /home/claude/riot-src/pkg/tinycrypt/ 
+"make" -C /home/claude/riot-src/build/pkg/tinycrypt/lib/source/ -f /home/claude/riot-src/pkg/tinycrypt/Makefile.tinycrypt -f /home/claude/riot-src/Makefile.base MODULE=tinycrypt
+"make" -C /home/claude/riot-src/pkg/wamr/ 
+test -f /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded && (test `cat /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded` = 8af155076c6c62d9766ede640cf3f29fa73a4b53 || rm /home/claude/riot-src/build/pkg/wamr/.pkg-state.git-downloaded);true
+PKG_VERSION: 8af155076c6c62d9766ede640cf3f29fa73a4b53
+native OS_ARCH: x86_64
+CPU_ARCH: rv32
+CPU: esp32
+CFLAGS: -DCONFIG_NIMBLE_AUTOADV_DEVICE_NAME="RIOT-WASM-Loader" -DCONFIG_NIMBLE_AUTOADV_START_MANUALLY=1 -DWAMR_RUNNER_STACKSIZE=(8U*1024U) -DWASM_XFER_MAX_SIZE=(24U*1024U) -DDEVELHELP -Wno-unused-parameter -Wformat=0 -fstrict-volatile-bitfields -fdata-sections -fzero-initialized-in-bss -DDEBUG_ASSERT_VERBOSE -Os -ggdb -g3 -DCONFIG_THREAD_NAMES -DSCHED_TEST_STACK -DCONFIG_FLASHMODE_DIO -DCONFIG_ESPTOOLPY_FLASHMODE_DIO -Ddefault_RNG_defined=0 -DNIMBLE_OS_MSYS_INIT_IN_CONTROLLER=1 -DNIMBLE_G_MSYS_POOL_LIST_IN_CONTROLLER=1 -DMBEDTLS_CIPHER_MODE_XTS -DCPU_FAM_ESP32C6 -DCONFIG_ESP_SYSTEM_SINGLE_CORE_MODE -DCONFIG_FREERTOS_UNICORE -DCONFIG_IDF_TARGET_ESP32C6 -DCONFIG_IDF_TARGET="esp32c6" -DESP_PLATFORM -DLOG_TAG_IN_BRACKETS -DRIOT_BUILD=1 -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DCONFIG_ESPTOOLPY_FLASHFREQ_80M -DCONFIG_ESPTOOLPY_FLASHSIZE_2MB -Dasm=__asm -Dtypeof=__typeof__ -D_CONST=const -DCONFIG_IDF_TARGET_ARCH_RISCV -DQCBOR_DISABLE_FLOAT_HW_USE -mno-relax -mabi=ilp32 -DRISCV_NO_RELAX -fno-jump-tables -misa-spec=2.2 -march=rv32imac_zicsr_zifencei -DRIOT_APPLICATION="wasm_ble_loader" -DBOARD_ESP32C6_DEVKIT="esp32c6-devkit" -DRIOT_BOARD=BOARD_ESP32C6_DEVKIT -DCPU_ESP32="esp32" -DRIOT_CPU=CPU_ESP32 -std=c11 -fwrapv -Wstrict-overflow -fno-common -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-include-dirs -fno-delete-null-pointer-checks -fdiagnostics-color -Wstrict-prototypes -Wold-style-definition -Wformat=2 -fmacro-prefix-map=/home/claude/riot-src/= -DCPU_RAM_BASE=0x40800000 -DCPU_RAM_SIZE=0x6e400 -DMBEDTLS_CONFIG_FILE=<riot_mbedtls_config.h> -DMYNEWT_VAL_BLE_TRANSPORT_EVT_SIZE=45 -include /tmp/fw-esp32c6-test/bin/esp32c6-devkit/riotbuild/riotbuild.h -Wno-maybe-uninitialized -Wno-format -Wno-strict-prototypes -Wno-old-style-definition -Wno-cast-function-type
+WAMR_BUILD_TARGET: RISCV32
+WAMR_CONFIG: /tmp/fw-esp32c6-test/wamr_config.cmake
+RIOT_INCLUDES: /tmp/fw-esp32c6-test /home/claude/riot-src/core/lib/include /home/claude/riot-src/core/include /home/claude/riot-src/drivers/include /home/claude/riot-src/sys/include /home/claude/riot-src/boards/esp32c6-devkit/include /home/claude/riot-src/cpu/esp32/include /home/claude/riot-src/boards/common/esp32/include /home/claude/riot-src/cpu/esp_common /home/claude/riot-src/cpu/esp_common/include /home/claude/riot-src/cpu/esp_common/include/freertos /home/claude/riot-src/cpu/esp_common/vendor/ /home/claude/riot-src/cpu/esp_common/vendor/esp /home/claude/riot-src/cpu/esp32/esp-idf/include /home/claude/riot-src/cpu/esp32/esp-idf/include/log /home/claude/riot-src/cpu/esp32/vendor/include /home/claude/riot-src/build/pkg/esp32_sdk/components /home/claude/riot-src/build/pkg/esp32_sdk/components/bootloader_support/include /home/claude/riot-src/build/pkg/esp32_sdk/components/driver/deprecated /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_adc/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_adc/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_common/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_driver_gpio/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_driver_uart/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/include/soc /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/port/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6 /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6/include/esp32c6 /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_system/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_system/port/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_timer/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/platform_port/include /home/claude/riot-src/build/pkg/esp32_sdk/components/heap/include /home/claude/riot-src/build/pkg/esp32_sdk/components/log/include /home/claude/riot-src/build/pkg/esp32_sdk/components/newlib/platform_include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/esp32c6/register /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include/spi_flash /home/claude/riot-src/build/pkg/esp32_sdk/components/riscv/include /home/claude/riot-src/build/pkg/esp32_sdk/components/bt/include/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/port/esp32c6/private_include /home/claude/riot-src/cpu/esp32/include/esp_ble_nimble /home/claude/riot-src/build/pkg/nimble/nimble/transport/common/hci_h4/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_partition/include /home/claude/riot-src/build/pkg/esp32_sdk/components/nvs_flash/include /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include /home/claude/riot-src/boards/common/esp32c6/include /home/claude/riot-src/boards/common/esp32x/include /home/claude/riot-src/sys/libc/include /home/claude/riot-src/build/pkg/mbedtls/include /home/claude/riot-src/build/pkg/mbedtls/include/mbedtls /home/claude/riot-src/pkg/mbedtls/include /home/claude/riot-src/pkg/nimble/contrib/include /home/claude/riot-src/build/pkg/nimble/nimble/include /home/claude/riot-src/build/pkg/nimble/porting/npl/riot/include /home/claude/riot-src/build/pkg/nimble/porting/nimble/include /home/claude/riot-src/build/pkg/nimble/nimble/host/include /home/claude/riot-src/build/pkg/nimble/nimble/host/store/ram/include /home/claude/riot-src/build/pkg/nimble/nimble/host/util/include /home/claude/riot-src/build/pkg/nimble/nimble/transport/include /home/claude/riot-src/build/pkg/nimble/nimble/transport/common/hci_h4/include /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gap/include /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gatt/include /home/claude/riot-src/pkg/nimble/autoadv/include /home/claude/riot-src/build/pkg/tinycrypt/lib/include /home/claude/riot-src/build/pkg/wamr/core/iwasm/include /home/claude/riot-src/build/pkg/wamr/core/shared/platform/include /home/claude/riot-src/build/pkg/wamr/core/shared/platform/riot /home/claude/riot-src/sys/posix/pthread/include /home/claude/riot-src/sys/auto_init/include /tmp/fw-esp32c6-test/bin/esp32c6-devkit/preprocessor
+ASMFLAGS="-DCONFIG_NIMBLE_AUTOADV_DEVICE_NAME='"RIOT-WASM-Loader"' -DCONFIG_NIMBLE_AUTOADV_START_MANUALLY=1 -DWAMR_RUNNER_STACKSIZE='(8U*1024U)' -DWASM_XFER_MAX_SIZE='(24U*1024U)' -DDEVELHELP -Wno-unused-parameter -Wformat=0 -fstrict-volatile-bitfields -fdata-sections -fzero-initialized-in-bss -DDEBUG_ASSERT_VERBOSE -Os -ggdb -g3 -DCONFIG_THREAD_NAMES -DSCHED_TEST_STACK -DCONFIG_FLASHMODE_DIO -DCONFIG_ESPTOOLPY_FLASHMODE_DIO -Ddefault_RNG_defined=0 -DNIMBLE_OS_MSYS_INIT_IN_CONTROLLER=1 -DNIMBLE_G_MSYS_POOL_LIST_IN_CONTROLLER=1 -DMBEDTLS_CIPHER_MODE_XTS -DCPU_FAM_ESP32C6 -DCONFIG_ESP_SYSTEM_SINGLE_CORE_MODE -DCONFIG_FREERTOS_UNICORE -DCONFIG_IDF_TARGET_ESP32C6 -DCONFIG_IDF_TARGET=\"esp32c6\" -DESP_PLATFORM -DLOG_TAG_IN_BRACKETS -DRIOT_BUILD=1 -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DCONFIG_ESPTOOLPY_FLASHFREQ_80M -DCONFIG_ESPTOOLPY_FLASHSIZE_2MB -Dasm=__asm -Dtypeof=__typeof__ -D_CONST=const -DCONFIG_IDF_TARGET_ARCH_RISCV -DQCBOR_DISABLE_FLOAT_HW_USE -mno-relax -mabi=ilp32 -DRISCV_NO_RELAX -fno-jump-tables -misa-spec=2.2 -march=rv32imac_zicsr_zifencei -DRIOT_APPLICATION=\"wasm_ble_loader\" -DBOARD_ESP32C6_DEVKIT=\"esp32c6-devkit\" -DRIOT_BOARD=BOARD_ESP32C6_DEVKIT -DCPU_ESP32=\"esp32\" -DRIOT_CPU=CPU_ESP32 -std=c11 -fwrapv -Wstrict-overflow -fno-common -ffunction-sections -fdata-sections -Wall -Wextra -Wmissing-include-dirs -fno-delete-null-pointer-checks -fdiagnostics-color -Wstrict-prototypes -Wold-style-definition -Wformat=2 -fmacro-prefix-map=/home/claude/riot-src/= -DCPU_RAM_BASE=0x40800000 -DCPU_RAM_SIZE=0x6e400 -DMBEDTLS_CONFIG_FILE='<riot_mbedtls_config.h>' -DMYNEWT_VAL_BLE_TRANSPORT_EVT_SIZE=45 -include '/tmp/fw-esp32c6-test/bin/esp32c6-devkit/riotbuild/riotbuild.h' -Wno-maybe-uninitialized -Wno-format -Wno-strict-prototypes -Wno-old-style-definition -Wno-cast-function-type" cmake -B/tmp/fw-esp32c6-test/bin/esp32c6-devkit/pkg-build/wamr "-DWAMR_CONFIG=/tmp/fw-esp32c6-test/wamr_config.cmake" "-DRIOT_INCLUDES=/tmp/fw-esp32c6-test /home/claude/riot-src/core/lib/include /home/claude/riot-src/core/include /home/claude/riot-src/drivers/include /home/claude/riot-src/sys/include /home/claude/riot-src/boards/esp32c6-devkit/include /home/claude/riot-src/cpu/esp32/include /home/claude/riot-src/boards/common/esp32/include /home/claude/riot-src/cpu/esp_common /home/claude/riot-src/cpu/esp_common/include /home/claude/riot-src/cpu/esp_common/include/freertos /home/claude/riot-src/cpu/esp_common/vendor/ /home/claude/riot-src/cpu/esp_common/vendor/esp /home/claude/riot-src/cpu/esp32/esp-idf/include /home/claude/riot-src/cpu/esp32/esp-idf/include/log /home/claude/riot-src/cpu/esp32/vendor/include /home/claude/riot-src/build/pkg/esp32_sdk/components /home/claude/riot-src/build/pkg/esp32_sdk/components/bootloader_support/include /home/claude/riot-src/build/pkg/esp32_sdk/components/driver/deprecated /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_adc/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_adc/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_common/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_driver_gpio/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_driver_uart/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/include/soc /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/port/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6 /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_rom/esp32c6/include/esp32c6 /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_system/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_system/port/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_timer/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/include /home/claude/riot-src/build/pkg/esp32_sdk/components/hal/platform_port/include /home/claude/riot-src/build/pkg/esp32_sdk/components/heap/include /home/claude/riot-src/build/pkg/esp32_sdk/components/log/include /home/claude/riot-src/build/pkg/esp32_sdk/components/newlib/platform_include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/soc/esp32c6/register /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include/spi_flash /home/claude/riot-src/build/pkg/esp32_sdk/components/riscv/include /home/claude/riot-src/build/pkg/esp32_sdk/components/bt/include/esp32c6/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_hw_support/port/esp32c6/private_include /home/claude/riot-src/cpu/esp32/include/esp_ble_nimble /home/claude/riot-src/build/pkg/nimble/nimble/transport/common/hci_h4/include /home/claude/riot-src/build/pkg/esp32_sdk/components/esp_partition/include /home/claude/riot-src/build/pkg/esp32_sdk/components/nvs_flash/include /home/claude/riot-src/build/pkg/esp32_sdk/components/spi_flash/include /home/claude/riot-src/boards/common/esp32c6/include /home/claude/riot-src/boards/common/esp32x/include /home/claude/riot-src/sys/libc/include /home/claude/riot-src/build/pkg/mbedtls/include /home/claude/riot-src/build/pkg/mbedtls/include/mbedtls /home/claude/riot-src/pkg/mbedtls/include /home/claude/riot-src/pkg/nimble/contrib/include /home/claude/riot-src/build/pkg/nimble/nimble/include /home/claude/riot-src/build/pkg/nimble/porting/npl/riot/include /home/claude/riot-src/build/pkg/nimble/porting/nimble/include /home/claude/riot-src/build/pkg/nimble/nimble/host/include /home/claude/riot-src/build/pkg/nimble/nimble/host/store/ram/include /home/claude/riot-src/build/pkg/nimble/nimble/host/util/include /home/claude/riot-src/build/pkg/nimble/nimble/transport/include /home/claude/riot-src/build/pkg/nimble/nimble/transport/common/hci_h4/include /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gap/include /home/claude/riot-src/build/pkg/nimble/nimble/host/services/gatt/include /home/claude/riot-src/pkg/nimble/autoadv/include /home/claude/riot-src/build/pkg/tinycrypt/lib/include /home/claude/riot-src/build/pkg/wamr/core/iwasm/include /home/claude/riot-src/build/pkg/wamr/core/shared/platform/include /home/claude/riot-src/build/pkg/wamr/core/shared/platform/riot /home/claude/riot-src/sys/posix/pthread/include /home/claude/riot-src/sys/auto_init/include /tmp/fw-esp32c6-test/bin/esp32c6-devkit/preprocessor" -DWAMR_BUILD_TARGET=RISCV32 -DWAMR_ROOT_DIR=/home/claude/riot-src/build/pkg/wamr/ -DCMAKE_SYSTEM_NAME=Generic -DCMAKE_SYSTEM_PROCESSOR="" -DCMAKE_C_COMPILER=riscv32-esp-elf-gcc -DCMAKE_C_COMPILER_WORKS=TRUE 
+-- Build Configurations:
+     Build as target RISCV32
+     CMAKE_BUILD_TYPE 
+     WAMR Interpreter enabled
+     WAMR AOT disabled
+     WAMR Fast JIT disabled
+     WAMR LLVM ORC JIT disabled
+     Libc builtin enabled
+     Libc WASI disabled
+     Fast interpreter enabled
+     Multiple modules disabled
+     Bulk memory feature enabled
+     Wakeup of blocking operations enabled
+     Reference types disabled
+     GC performance profiling disabled
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fw-esp32c6-test/bin/esp32c6-devkit/pkg-build/wamr
+make -C /tmp/fw-esp32c6-test/bin/esp32c6-devkit/pkg-build/wamr 
+[100%] Built target wamr
+"make" -C /home/claude/riot-src/boards
+"make" -C /home/claude/riot-src/boards/common/esp32c6
+"make" -C /home/claude/riot-src/boards/common/esp32x
+"make" -C /home/claude/riot-src/boards/common/init
+"make" -C /home/claude/riot-src/boards/esp32c6-devkit
+"make" -C /home/claude/riot-src/core
+"make" -C /home/claude/riot-src/core/lib
+"make" -C /home/claude/riot-src/cpu/esp32
+"make" -C /home/claude/riot-src/cpu/esp32/bootloader
+Generating bootloader image /tmp/fw-esp32c6-test/bin/esp32c6-devkit/esp_bootloader/bootloader.bin
+esptool v5.0.0
+Creating ESP32C6 image...
+Merged 1 ELF section.
+Successfully created ESP32C6 image.
+"make" -C /home/claude/riot-src/cpu/esp32/esp-ble-nimble
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/ble
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/common
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/efuse
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/gpio
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/nvs_flash
+"make" -C /home/claude/riot-src/cpu/esp32/esp-idf/spi_flash
+"make" -C /home/claude/riot-src/cpu/esp32/freertos
+"make" -C /home/claude/riot-src/cpu/esp32/periph
+"make" -C /home/claude/riot-src/cpu/esp_common
+"make" -C /home/claude/riot-src/cpu/esp_common/esp-riscv
+"make" -C /home/claude/riot-src/cpu/esp_common/freertos
+"make" -C /home/claude/riot-src/cpu/esp_common/periph
+"make" -C /home/claude/riot-src/drivers
+"make" -C /home/claude/riot-src/drivers/periph_common
+"make" -C /home/claude/riot-src/pkg/mbedtls/contrib
+"make" -C /home/claude/riot-src/pkg/nimble/autoadv
+"make" -C /home/claude/riot-src/sys
+"make" -C /home/claude/riot-src/sys/auto_init
+"make" -C /home/claude/riot-src/sys/cpp_new_delete
+"make" -C /home/claude/riot-src/sys/div
+"make" -C /home/claude/riot-src/sys/event
+"make" -C /home/claude/riot-src/sys/fmt
+"make" -C /home/claude/riot-src/sys/frac
+"make" -C /home/claude/riot-src/sys/isrpipe
+"make" -C /home/claude/riot-src/sys/libc
+"make" -C /home/claude/riot-src/sys/luid
+"make" -C /home/claude/riot-src/sys/net/ble/bluetil
+"make" -C /home/claude/riot-src/sys/net/ble/bluetil/bluetil_ad
+"make" -C /home/claude/riot-src/sys/net/ble/bluetil/bluetil_addr
+"make" -C /home/claude/riot-src/sys/newlib_syscalls_default
+"make" -C /home/claude/riot-src/sys/pm_layered
+"make" -C /home/claude/riot-src/sys/posix/pthread
+"make" -C /home/claude/riot-src/sys/preprocessor
+"make" -C /home/claude/riot-src/sys/ps
+"make" -C /home/claude/riot-src/sys/random
+"make" -C /home/claude/riot-src/sys/sema
+"make" -C /home/claude/riot-src/sys/shell
+"make" -C /home/claude/riot-src/sys/shell/cmds
+"make" -C /home/claude/riot-src/sys/stdio
+"make" -C /home/claude/riot-src/sys/stdio_uart
+"make" -C /home/claude/riot-src/sys/timex
+"make" -C /home/claude/riot-src/sys/tsrb
+"make" -C /home/claude/riot-src/sys/ztimer
+"make" -C /home/claude/riot-src/sys/ztimer64
+esptool v5.0.0
+Creating ESP32C6 image...
+Merged 2 ELF sections.
+Successfully created ESP32C6 image.
+# append size of /tmp/fw-esp32c6-test/bin/esp32c6-devkit/wasm_ble_loader.elf.bin
+Parsing CSV input...
+   text	   data	    bss	    dec	    hex	filename
+ 510122	 116064	 537958	1164144	 11c370	/tmp/fw-esp32c6-test/bin/esp32c6-devkit/wasm_ble_loader.elf

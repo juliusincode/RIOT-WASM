@@ -1,0 +1,25 @@
+# RIOT build output
+firmware/bin/
+firmware/*.map
+firmware/*.elf
+firmware/*.bin
+
+# WASM module build artifacts (keep the checked-in .wasm outputs, ignore
+# intermediate object files)
+wasm-modules/*.o
+
+# Python
+host-tool/__pycache__/
+host-tool/*.pyc
+host-tool/venv/
+host-tool/.venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# RIOT checkout (cloned separately per README.md, never vendored here)
+/RIOT/
