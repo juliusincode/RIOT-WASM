@@ -4,7 +4,7 @@
 # validates it via CRC32, and hands it off to a dedicated WAMR worker thread.
 
 APPLICATION = wasm_ble_loader
-
+RIOTBASE = /home/julius/RIOT
 # Target board: generic ESP32-C6 DevKit (RISC-V, BLE 5 via NimBLE/HCI)
 BOARD ?= esp32c6-devkit
 
